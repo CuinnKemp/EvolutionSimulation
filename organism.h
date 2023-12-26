@@ -55,5 +55,5 @@ class Organism {
 };
 
 
-const vector<int> Organism::dimensions = {500,500};
+const vector<int> Organism::dimensions = {1000,1000};
 #endif //ORGANISM

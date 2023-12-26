@@ -2,7 +2,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "organism.h"
 #include "predator.h"
 #include "prey.h"
 
