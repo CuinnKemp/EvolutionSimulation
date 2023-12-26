@@ -8,7 +8,7 @@ using namespace std;
 class Organism {
     public:
         sf::Vector2f position;
-        sf::Vector2f dimensions = {250,250};
+        static const vector<int> dimensions;
         sf::CircleShape shape;
         int type = 0;
         bool isDead = false;
@@ -30,7 +30,7 @@ class Organism {
             // get direction in degrees;
             float direction = (rand()%(314159*2))/pow(10,5);
             sf::Vector2f movementVector = {(float)0.1 * (float)cos(direction), (float)0.1 * (float)sin(direction)};
-            while ((position.x + movementVector.x < 0 || position.x + movementVector.x > dimensions.x) || (position.y + movementVector.y < 0 || position.y + movementVector.y > dimensions.y)){
+            while ((position.x + movementVector.x < 0 || position.x + movementVector.x > dimensions[0]) || (position.y + movementVector.y < 0 || position.y + movementVector.y > dimensions[1])){
                 direction = (rand()%(314159*2))/pow(10,5);
                 movementVector = {(float)0.1 * (float)cos(direction), (float)0.1 * (float)sin(direction)};
             }
@@ -54,4 +54,6 @@ class Organism {
 
 };
 
+
+const vector<int> Organism::dimensions = {500,500};
 #endif //ORGANISM
